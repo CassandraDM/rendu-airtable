@@ -1,0 +1,83 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.client-list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-item {
+  display: flex;
+  min-width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.client-item:hover {
+  transform: scale(1.02);
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+.client-info span {
+  margin-bottom: 5px;
+}
+
+.client-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-button,
+.edit-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+  transform: scale(1.05);
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}

@@ -1,29 +1,26 @@
-import { useEffect, useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { getClients } from "./utils/airtable";
-import { Clients } from "./utils/types/Client";
-import Chip from "./components/Chip/Chip";
-import ClientForm from "./components/ClientForm/ClientForm";
+import Admin from "./pages/Admin";
+import Home from "./pages/Home";
+import EditPage from "./pages/EditPage";
 
 function App() {
-  const [clients, setClients] = useState<Clients>([]);
-  useEffect(() => {
-    getClients(setClients);
-  }, []);
-
   return (
     <div>
-      Hello Airtable application
-      <ul>
-        {clients.map((client) => (
-          <li key={client.id}>
-            ID : {client.id} - {client.firstname} {client.lastname} -{" "}
-            {client.email} - {client.phonenumber} -{" "}
-            <Chip status={client.status} />
-          </li>
-        ))}
-      </ul>
-      <ClientForm setClients={setClients} />
+      <nav className="navbar">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+        <Link to="/admin" className="nav-link">
+          Admin
+        </Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/edit/:id" element={<EditPage />}></Route>
+      </Routes>
     </div>
   );
 }
